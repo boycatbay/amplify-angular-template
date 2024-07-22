@@ -1,0 +1,109 @@
+:root {
+    /* light theme */
+    --dropdown-background: #fff;
+    --dropdown-text-color: #000;
+    --dropdown-hover-color: #eee;
+    --dropdown-border-color: #caced1;
+    --dropdown-border-radius: 0.25em;
+    --dropdown-icon-color: #000;
+    --background-color: #eee;
+    --text-color: #000;
+}
+
+body {
+    /* ... */
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.custom-select select {
+    /* ... */
+    background-color: var(--dropdown-background);
+    border-radius: var(--dropdown-border-radius);
+    color: var(--dropdown-text-color);
+    border: 1px solid var(--dropdown-border-color);
+}
+
+.custom-select select:hover {
+    background-color: var(--dropdown-hover-color);
+}
+
+.custom-select::before {
+    /* ... */
+    border-bottom: var(--size) solid var(--dropdown-icon-color)
+}
+
+.custom-select::after {
+    /* ... */
+    border-top: var(--size) solid var(--dropdown-icon-color);
+}
+
+/* dark theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dropdown-background: #000;
+        --dropdown-text-color: #fff;
+        --dropdown-hover-color: #222;
+        --dropdown-border-color: #555;
+        --dropdown-border-radius: 0.25em;
+        --dropdown-icon-color: #fff;
+        --background-color: #000;
+        --text-color: #fff;
+    }
+}
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td,
+#customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+    background-color: #ddd;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td,
+#customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+    background-color: #ddd;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
