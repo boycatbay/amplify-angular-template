@@ -1,18 +1,30 @@
 <!-- todos.component.html -->
 <main>
-    <h1>My todos</h1>
-    <button (click)="createTodo()">+ new</button>
-    <ul>
-        <li 
-            *ngFor="let todo of todos;">
-            {{ todo.content }}
-        </li>
-    </ul>
-    <div>
-        🥳 App successfully hosted. Try creating a new todo.
-        <br />
-        <a href="https://docs.amplify.aws/gen2/start/quickstart/">
-            Review next steps of this tutorial.
-        </a>
-    </div>
+    <h1>Lambda Upgrading</h1>
+
+    <label>Select Lambda Runtime: </label>
+    <select #runtimes (change)="onSelected(runtimes.value)">
+      <option disabled selected value> -- select an option -- </option>
+      <option value="nodejs16.x">NodeJS 16.X</option>
+      <option value="python3.8">Python 3.8</option>
+    </select>
+      
+      <p>Selected option: {{ selectedRuntime }}</p>
+
+      <table *ngIf="lambda_list?.length" id="customers">
+        <tr>
+          <th>Lambda Function Name</th>
+          <th>Runtime</th>
+          <th>Upgrade</th>
+        </tr>
+        <tr *ngFor="let row of lambda_list">
+          <td>{{ row.name }}</td>
+          <td>{{ row.runtime }}</td>
+          <td><button type="button"
+            (click)="onClick(row.name)">
+        Confirm
+    </button></td>
+        </tr>
+      </table>
+  
 </main>
